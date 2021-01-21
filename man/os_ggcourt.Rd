@@ -4,10 +4,12 @@
 \alias{os_ggcourt}
 \title{Minimal ggplot court plot}
 \usage{
-os_ggcourt(court = "tennis", ...)
+os_ggcourt(court = "tennis", line_colour = "black", ...)
 }
 \arguments{
 \item{court}{string: court to plot, currently only "tennis"}
+
+\item{line_colour}{string: colour to use for court lines}
 
 \item{...}{: additional arguments, currently ignored}
 }

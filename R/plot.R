@@ -1,6 +1,7 @@
 #' Minimal ggplot court plot
 #'
 #' @param court string: court to plot, currently only "tennis"
+#' @param line_colour string: colour to use for court lines
 #' @param ... : additional arguments, currently ignored
 #'
 #' @return A list that can be added to a [ggplot2::ggplot()]
@@ -11,7 +12,7 @@
 #' ggplot() + os_ggcourt("tennis")
 #'
 #' @export
-os_ggcourt <- function(court = "tennis", ...) {
+os_ggcourt <- function(court = "tennis", line_colour = "black", ...) {
     assert_that(is.string(court))
     court <- tolower(court)
     court <- match.arg(court, c("tennis"))
@@ -20,12 +21,12 @@ os_ggcourt <- function(court = "tennis", ...) {
                                             y = c(0, 0, 0, 200, 100, 0, 0),
                                             xend = c(0, 100, 100, 100, 105, 12.5, 87.5),
                                             yend = c(200, 200, 0, 200, 100, 200, 200)),
-                          aes_string(x = "x", y = "y", xend = "xend", yend = "yend"), inherit.aes = FALSE, color = "black"),
+                          aes_string(x = "x", y = "y", xend = "xend", yend = "yend"), inherit.aes = FALSE, color = line_colour),
              geom_segment(data = data.frame(x = c(50, 12.5, 12.5),
                                             y = c(46, 154, 46),
                                             xend = c(50, 87.5, 87.5),
                                             yend = c(154, 154, 46)),
-                          aes_string(x = "x", y = "y", xend = "xend", yend = "yend"), inherit.aes = FALSE, color = "grey45"),
+                          aes_string(x = "x", y = "y", xend = "xend", yend = "yend"), inherit.aes = FALSE, color = line_colour),
              coord_equal(),
              theme_void())
     } else {

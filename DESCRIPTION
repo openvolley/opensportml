@@ -1,6 +1,6 @@
 Package: opensportml
 Title: Machine Learning Tools for Sports Analytics
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(person("Ben", "Raymond", role = c("aut", "cre"), email = "ben@untan.gl"),
              person("Adrien", "Ickowicz", role = "aut"))
 Description: Image and video machine learning tools, for application to sports analytics.
