@@ -99,7 +99,9 @@ And plot it:
 
 ``` r
 library(ggplot2)
-ggplot(dets, aes(x, y)) + os_ggcourt() + geom_point()
+ggplot(dets, aes(x, y)) + 
+    os_ggcourt(line_colour = "white") + geom_point(colour = "blue", size = 3) +
+    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "#95a264"))
 ```
 
 <img src="man/figures/README-ex8-1.png" width="100%" />
